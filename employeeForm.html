@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Form Validation</title>
+</head>
+<body>
+
+    <h2>Employee Form</h2>
+
+    <form onsubmit="return validateForm()">
+        Name: <input type="text" id="empName"><br><br>
+        Email: <input type="text" id="empEmail"><br><br>
+        Salary: <input type="number" id="empSalary"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("empName").value.trim();
+            const email = document.getElementById("empEmail").value.trim();
+            const salary = document.getElementById("empSalary").value.trim();
+            const message = document.getElementById("message");
+
+            if (name === "" || email === "" || salary === "") {
+                message.innerText = "All fields are required!";
+                message.style.color = "red";
+                return false;             }
+
+            if (!email.includes("@")) {
+                message.innerText = "Enter valid email!";
+                message.style.color = "red";
+                return false;
+            }
+
+            message.innerText = "Form Submitted Successfully ✔";
+            message.style.color = "green";
+            return true;         }
+    </script>
+
+</body>
+</html>

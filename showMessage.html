@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Message</title>
+</head>
+<body>
+
+    <div id="messageBox" style="margin-bottom:10px; font-weight:bold;"></div>
+
+    <button onclick="showMessage('Hello Sumit!')">Show Message</button>
+
+    <script>
+        function showMessage(msg) {
+            document.getElementById("messageBox").innerText = msg;
+        }
+    </script>
+
+</body>
+</html>

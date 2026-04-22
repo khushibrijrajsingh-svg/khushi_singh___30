@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validate Name</title>
+</head>
+<body>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="validateName()">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+        function validateName() {
+            const name = document.getElementById("name").value;
+            const message = document.getElementById("message");
+
+            if (name.trim() === "") {
+                message.innerText = "Name cannot be empty!";
+                message.style.color = "red";
+            } else {
+                message.innerText = "Valid Name ✔";
+                message.style.color = "green";
+            }
+        }
+    </script>
+
+</body>
+</html>
